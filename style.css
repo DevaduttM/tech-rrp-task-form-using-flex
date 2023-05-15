@@ -25,10 +25,6 @@ body{
     height: 100vh;
 }
 
-html{
-    overflow-x: hidden;
-}
-
 .container{
     position: relative;
     background: var(--text-color);
@@ -37,7 +33,6 @@ html{
     align-items: center;
     border-radius: 0.9rem;
     padding: 2rem;
-    overflow: hidden;
 }
 
 form{
