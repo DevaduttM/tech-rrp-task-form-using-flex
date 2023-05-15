@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+body{
+    background: var(--bg-color);
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+.container{
+    position: relative;
+    background: var(--text-color);
+    width: 60rem;
+    height: 35rem;
+    align-items: center;
+    box-shadow: 10px 10px 20px var(--second-bg-color);
+    border-radius: 0.9rem;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup{
+    opacity: 0;
+    z-index: 1; 
+    position: relative; 
+}
+
+h1{
+    color: var(--bg-color);
+}
+
+.socials a{
+    border: 1px solid #DDD;
+    display: inline-flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 0.18rem;
+    margin: 0 .2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.signin a{
+    font-size: 12px;
+    color: var(--second-bg-color);
+    margin-top: 12px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.userinput{
+    position: relative;
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+input{
+    width: 95%;
+    padding: 0.7rem 2rem;
+    background-color: #f3f3f3;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+.formcontainer{
+    position: absolute;
+    width: 53%;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    overflow-y: hidden;
+    padding-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.checked{
+    display: inline-flex;
+    height: 40px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.check{
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+}
+
+#tc{
+    font-size: 15px;
+    color: blue;
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+label{
+    position: absolute;
+    left: 48%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: var(--second-bg-color);
+    transition: 0.3s;
+}
+
+.userinput span{
+    position: absolute;
+    top: 10px;
+    left: 11px;
+    opacity: 0.8;
+}
+
+
+input:focus ~ label{
+    width: 90%;
+}
+
+button{
+    border-radius: 20px;
+    border: 1px solid var(--bg-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    padding: 8px 25px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.formcontainer button{
+    transition: 0.3s ease;
+}
+
+.formcontainer button:hover{
+    background: var(--second-bg-color);
+}
+
+.overlaycontainer{
+    position: absolute;
+    top: 0;
+    left: 58%;
+    width: 42%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 9;
+}
+
+
+.signin{
+    z-index: 2;
+}
+
+#overlaybuttn{
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 311px;
+    transform: translateX(-50%);
+    width: 143px;
+    height: 40px;
+    border: 1px solid #FFF;
+    background: transparent;
+    border-radius: 20px ;
+}
+
+.overlay{
+    position: relative;
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    left: -150%;
+    height: 100%;
+    width: 250%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlaypanel{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 40%;
+    transition: 0.6s ease-in-out;
+}
+
+.overlayleft{
+    right: 60%;
+    transform: translateX(-12%);
+}
+
+.overlayright{
+    right: 0;
+    transform: translateX(0%);
+}
+
+.overlaypanel h1{
+    color: var(--text-color);
+}
+
+p{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 37px 0 35px;
+}
+
+.overlaypanel button{
+    border: none;
+    background: transparent;
+}
+
+.rightpanel-active .overlaycontainer{
+    transform: translateX(-150%);
+}
+
+.rightpanel-active .overlay{
+    transform: translateX(50%);
+}
+
+.rightpanel-active .overlayleft{
+    transform: translateX(25%);
+}
+
+.rightpanel-active .overlayright{
+    transform: translateX(20%);
+    opacity: 100;
+    z-index: 5;
+}
+
+.rightpanel-active .signin{
+    transform: translateX(20%);
+    opacity: 0;
+}
+
+.rightpanel-active .signup{
+    transform: translateX(72%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 50%{
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50.1%, 100%{
+        opacity: 100;
+        z-index: 5;
+    }
+    
+}
