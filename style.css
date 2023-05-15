@@ -18,6 +18,9 @@
     --main-color: #0ef;
 }
 
+html{
+    overflow-x: hidden;
+}
 body{
     background: var(--bg-color);
     display: grid;
@@ -33,6 +36,7 @@ body{
     align-items: center;
     border-radius: 0.9rem;
     padding: 2rem;
+    overflow: hidden;
 }
 
 form{
