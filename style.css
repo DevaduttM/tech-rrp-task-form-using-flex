@@ -35,7 +35,6 @@ html{
     width: 60rem;
     height: 35rem;
     align-items: center;
-    box-shadow: 10px 10px 20px var(--second-bg-color);
     border-radius: 0.9rem;
     padding: 2rem;
     overflow: hidden;
